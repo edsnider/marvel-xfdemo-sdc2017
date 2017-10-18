@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tizenExt="clr-namespace:Tizen.Xamarin.Forms.Extension;assembly=Tizen.Xamarin.Forms.Extension"
+             x:Class="MarvelDemo.Views.TizenTV.CharactersView"
+             Title="Characters">
+    <tizenExt:GridView ItemsSource="{Binding Characters}" 
+                       ItemWidth="500" 
+                       ItemHeight="500"
+                       SelectionMode="Default"
+                       IsHighlightEffectEnabled="true"
+                       ItemSelected="OnCharacterSelected">
+        <tizenExt:GridView.ItemTemplate>
+            <DataTemplate>
+                <tizenExt:Type1GridViewCell Text="{Binding Name}" Content="{Binding Thumbnail.FullPath}"/>
+            </DataTemplate>
+        </tizenExt:GridView.ItemTemplate>
+    </tizenExt:GridView>
+</ContentPage>

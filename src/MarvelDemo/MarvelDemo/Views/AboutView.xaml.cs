@@ -16,5 +16,15 @@ namespace MarvelDemo.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void OnMarvelLinkClicked(object sender, EventArgs e)
+        {
+            Device.OpenUri(new Uri("http://developer.marvel.com"));
+        }
+
+        private void OnIcons8LinkClicked(object sender, EventArgs e)
+        {
+            Device.OpenUri(new Uri("http://www.icons8.com"));
+        }
+    }
 }

@@ -1,5 +1,4 @@
-﻿using MarvelDemo.Views;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace MarvelDemo
 {
@@ -8,10 +7,19 @@ namespace MarvelDemo
         public App()
         {
             InitializeComponent();
-
+            
             var tabs = new TabbedPage { Title = "The Avengers" };
-            tabs.Children.Add(new CharactersView());
-            tabs.Children.Add(new AboutView());
+
+            if (Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS)
+            {
+                tabs.Children.Add(new Views.CharactersView());
+            }
+            else
+            {
+                tabs.Children.Add(new Views.TizenTV.CharactersView());
+            }
+
+            tabs.Children.Add(new Views.AboutView());
 
             MainPage = new NavigationPage(tabs);
         }

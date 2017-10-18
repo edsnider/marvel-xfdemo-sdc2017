@@ -2,19 +2,19 @@
 using MarvelDemo.ViewModels;
 using Xamarin.Forms;
 
-namespace MarvelDemo.Views
+namespace MarvelDemo.Views.TizenTV
 {
 	//[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CharactersView : ContentPage
 	{
         CharactersViewModel _vm => BindingContext as CharactersViewModel;
 
-        public CharactersView()
-        {
+		public CharactersView()
+		{
             InitializeComponent();
-
+            
             BindingContext = new CharactersViewModel();
-        }
+		}
 
         protected override void OnAppearing()
         {
